@@ -2,6 +2,9 @@
 module.exports = {
   content: ['./views/**/*.handlebars'],
   theme: {
+    backgroundImage: {
+      'polina-chistyakova': "url('/images/pexels-polina-chistyakova-12290139.png')",
+    },
     screens:{
       ms: "480px",
       md: "768px",

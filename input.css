@@ -70,8 +70,7 @@
 
     .background-image {
         @apply
-       h-screen bg-[url("/images/pexels-polina-chistyakova-12290139.jpg")] 
-        bg-cover bg-center bg-no-repeat
+        bg-polina-chistyakova m-0 p-0 bg-cover bg-center md:bg-cover md:bg-center md:m-0 md:p-0
     }
 }
 

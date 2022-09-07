@@ -22,7 +22,7 @@ router.get("/", withAuth, async (req, res) => {
     res.render("post-restaurants", {
       layout: "dashboard",
       restaurants,
-      username: restaurants[0].user.username, 
+      username: req.session.username, 
     });
     
   } catch (err) {

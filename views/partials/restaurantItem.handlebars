@@ -7,8 +7,10 @@
     <div
       class="p-4 m-3 shadow-md shadow-red-100 hover:bg-red-50 font-semibold"
     ><a href="/api/review/{{id}}">Write a review</a></div>
-    <div class="mb-3">
-
+    <div class="hidden" id="userReviewCounsts">{{userReviewCounts}}</div>
+    <div class="hidden" id="totalRated">{{totalRated}}</div>
+    <div class="mb-3" id="avgRated">
+      {{avgRated}}
     </div>
   </div>
 </div>

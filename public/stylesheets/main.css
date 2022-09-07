@@ -714,11 +714,20 @@ font-family: 'Readex Pro', sans-serif;
 }
 
 .background-image{
-  height: 100vh;
-  background-image: url("/images/pexels-polina-chistyakova-12290139.jpg");
+  margin: 0px;
+  background-image: url('/images/pexels-polina-chistyakova-12290139.png');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  padding: 0px;
+}
+
+@media (min-width: 768px){
+  .background-image{
+    margin: 0px;
+    background-size: cover;
+    background-position: center;
+    padding: 0px;
+  }
 }
 
 .absolute{
