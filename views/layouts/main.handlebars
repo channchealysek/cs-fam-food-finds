@@ -1,0 +1,129 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <title>Fam Food Finds</title>
+  </head>
+  <body class="background-image">
+
+    <header>
+      {{#if loggedIn}}
+                    {{! Navbar }}
+      <nav class="nav-container">
+        {{! Flex container }}
+        <div class="flex items-center justify-between">
+          {{! Logo }}
+          <div class="pt-2 w-48">
+            <img src="/images/logo.png" alt="" class=" shadow-md" />
+          </div>
+          {{! menu Items }}
+          <div class="hidden md:flex space-x-6">
+            <a href="/" class="menu_red50">Home</a>
+            <a
+              href="/dashboard"
+              class="menu_red50">Dashboard</a>
+            <a
+              href="/"
+              class="menu_red50"
+              id="logout">Logout</a>
+
+          </div>
+
+          {{! Humberger Icon }}
+          <button
+            id="menu-btn"
+            class="block hamburger md:hidden focus:outline-none"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+
+        </div>
+        {{! mobile menu }}
+        <div class="md:hidden">
+          <div
+            id="menu"
+            class="absolute flex-col z-10 items-center self-end hidden py-5 mt-7 space-y-6 font-bold bg-red-100 sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+          >
+            <a href="/" class="menu_red50_md">Home</a>
+            <a
+              href="/dashboard"
+              class="menu_red50_md"
+            >Dashboard</a>
+            <a
+              href="/"
+              class="menu_red50_md"
+              id="logout">Logout</a>
+          </div>
+        </div>
+      </nav>
+      {{! end Navvar }}
+      {{else}}
+              {{! Navbar }}
+      <nav class="nav-container">
+        {{! Flex container }}
+        <div class="flex items-center justify-between">
+          {{! Logo }}
+          <div class="pt-2 w-48">
+            <img src="/images/logo.png" alt="" class=" shadow-md" />
+          </div>
+          {{! menu Items }}
+          <div class="hidden md:flex space-x-6">
+            <a href="/" class="menu_red50">Home</a>
+            <a
+              href="/dashboard"
+              class="menu_red50">Dashboard</a>
+            <a href="/login" class="menu_red50">Login</a>
+            <a href="/signup" class="menu_red50">Signup</a>
+          </div>
+
+          {{! Humberger Icon }}
+          <button
+            id="menu-btn"
+            class="block hamburger md:hidden focus:outline-none"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+
+        </div>
+        {{! mobile menu }}
+        <div class="md:hidden">
+          <div
+            id="menu"
+            class="absolute flex-col z-10 items-center self-end hidden py-5 mt-7 space-y-6 font-bold bg-red-100 sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+          >
+            <a href="/" class="menu_red50_md">Home</a>
+            <a
+              href="/dashboard"
+              class="menu_red50_md"
+            >Dashboard</a>
+            <a href="/login" class="menu_red50_md">Login</a>
+            <a href="/signup" class="menu_red50_md">Signup</a>
+          </div>
+        </div>
+      </nav>
+      {{! end Navvar }}
+      {{/if}}
+    </header>
+
+    <main class="">
+      {{{body}}}
+    </main>
+    <script src="/javascript/menu.js"></script>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<div class="col-auto">
+  <div class=" bg-darkBlue text-cyan-50 text-3xl p-3">Welcome! {{ username }}</div>
+  </div>
+</div>
+<br>
+{{#if restaurants.length}}
+<div class=" flex flex-col">
+  {{#each restaurants as |restaurant|}}
+  {{> editItem restaurant}}
+  {{/each}}
+</div>
+{{/if}}

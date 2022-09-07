@@ -1,0 +1,43 @@
+<div class="flex items-center">
+  <div class="flex-1 max-w-4xl mx-auto p-10">
+    <ul class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
+      <li class="md:col-span-2 bg-white rounded-lg shadow border">
+        <div class="">
+          <div class="restaurant_name">
+            <p>{{ reviewPost.restaurant_name}}</p>
+               <div id="overall-rating" class="stars">Reviews
+                
+               </div>
+          </div>
+          <div class="badge mt-4 ml-2 avg-rating">{{avgRating}}</div> 
+          <div class="bg-white shadow-md p-5 review_and_comment">
+                <form class="form">
+                {{> stars stars}}
+                  <div class="flex-auto w-full md-1 text-xs space-y-2 mt-4">
+                    <label class=" text-neutral-600 py-2">Add a Review</label>
+                    <textarea name="review-text" class="h-28 w-full appearance-none block bg-gray-50 text-gray-600 border e"></textarea>
+                  </div>
+                  <button type="submit" class="mt-2 m-3 bg-gray-600 px-5 py-2 text-sm shadow-md tracking-wider text-white rounded-full hover:bg-darkGrayishBlue hover:shadow-lg focus:outline-none submit-review">Post Review</button>
+                </form>
+            </div>
+        </div>
+      </li>
+      <li class="bg-white rounded-lg shadow-xl">
+        <div class="reviews">
+          <ul>
+            {{#each reviewPost.reviews}}
+            <li class="p-2 text-sm">
+              <div class="user_comment_name">{{user.username}}</div>
+              <div class="user-rating">{{rating}}</div>
+              <div class="comment_text">{{review_text}}</div>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    <script src="/javascript/star-ratings.js"></script>
+    <script src="/javascript/add-review.js"></script>

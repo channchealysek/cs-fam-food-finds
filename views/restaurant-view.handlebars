@@ -1,0 +1,28 @@
+<div>
+  <div class=" ml-10 mt-10 bg-darkGrayishBlue hover:bg-red-100 w-40 text-center"><a href="/dashboard"> ← Back to Dashboard</a></div>
+  <div class="border shadow-sm ml-10 mr-10 mt-3 bg-white">
+  <div class="flex-row justify-space-between ">
+    <div class="text-2xl p-3 mt-0 bg-red-100">{{restaurant.restaurant_name}}</div>
+      <ul class="flex flex-col md:flex-row md:gap-4 text-right m-5">
+        <li class=" flex-grow text-left">
+          <a href="{{restaurant.restaurant_url}}">
+            {{restaurant.restaurant_url}}
+          </a>
+          <div class="">
+            {{restaurant.restaurant_description}}
+          </div>
+          <div class="">
+            Created on {{format_date restaurant.createdAt}}
+          </div>
+        </li>
+        <li class="m-3">
+            Average Rating: {{avgRating}}
+        </li>
+    </ul>
+  </div>
+</div>
+</div>
+<input type="hidden" name="restaurant-id" value="{{restaurant.id}}"/>
+<div class="">
+  {{> reviews restaurant.reviews}}
+</div>

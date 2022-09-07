@@ -1,0 +1,59 @@
+
+<div class="text-gray-800 antialiased px-4 py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-xl mx-auto text-center">
+    <span class="text-2xl font-light">New Restuarant</span>
+    <form class="" id="new-restaurant-form">
+      <input type="hidden" name="restaurant-id" value="{{restaurant.id}}"/>
+      <div class="relative mt-4 bg-white shadow-md sm:rounded-lg text-left">
+        <div class="h-2 bg-darkGrayishBlue rounded-t-md"></div>
+        <div class="py-6 px-8">
+          <label class="block font-semibold">Restaurant Name:<label>
+          <input type="text" placeholder="Restaurant name" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md" name="restaurant-name" />
+          <label class="block mt-3 font-semibold">Restaurant URL:<label>
+          <input type="text" placeholder="Restaurant URL" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md" name="restaurant-url" />
+          <label class="block mt-3 font-semibold">Restaurant Description:<label>
+          <textarea class="px-3 py-5 mt-2 h-28 w-full appearance-none block bg-gray-50 text-gray-600 border" placeholder="Restaurant Description" name="restaurant-description"></textarea>
+         {{!-- new modified dropdown categories --}}
+               {{!-- dropdown list Categories --}}
+          <div class=" flex align-middle items-center justify-center gap-2 bg-gray-100 p-2 w-96 mr-0 justify-items-end">
+            <p class="shadow-md  w-50 bg-gray-50 pl-2 pr-2 pt-2 pb-2">Choose:</p>
+            <div class="dropdown inline-block relative">
+              <button class="bg-white-300 border shadow-md text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center justify-start" id="btnCategories">
+                <span class="dropdownwidth mr-1">Categories</span>
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+              </button>
+              <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-36" id="itemCategoris">
+                  {{#each categories as |category|}}
+                    <li class="rounded-t bg-gray-200 py-2 px-4 block whitespace-no-wrap hover:bg-red-50 border-b"> {{category.category_name}}</li>
+                  {{/each}}
+              </ul>
+            </div>
+          </div>
+         
+          <!--
+          <div class=" flex items-end justify-start gap-4 mt-3">
+            <p>Categories:</p>
+            <button class="relative flex items-center focus:outline-none shadow text-gray-600 border rounded focus:ring ring-gray-200 group">
+                <p class="px-4">Choose...</p>
+                <span class="border-l hover:bg-gray-100">
+                    <i class='fas fa-angle-down hover:text-darkGrayishBlue w-6 h-6 text-gray-600'></i>
+                </span>
+                <div class="absolute hidden group-focus:block top-full min-w-full w-max bg-white shadow-md mt-1 rounded">
+                    <ul class="text-left border rounded">
+                      {{#each categories as |category|}}
+                          <li class="px-4 py-1 hover:bg-red-50 border-b"> {{category.category_name}}</li>
+                      {{/each}}
+                    </ul>
+                </div>
+            </button>
+          </div>
+          -->
+          <div class="flex justify-end items-baseline ">
+              <button class="w-32 mt-5 mr-3 ml-3 bg-gray-600 px-5 py-2 text-sm shadow-md tracking-wider text-white rounded-full hover:bg-green-400 hover:shadow-lg focus:outline-none" type="submit">Create</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="/javascript/new-restaurant.js"></script>

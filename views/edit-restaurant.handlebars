@@ -1,0 +1,60 @@
+
+<div class="text-gray-800 antialiased px-4 py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-xl mx-auto text-center">
+    <span class="text-2xl font-light">Edit Restuarant</span>
+    <form class="" id="edit-restaurant-form">
+      <input type="hidden" name="restaurant-id" value="{{restaurant.id}}"/>
+      <div class="relative mt-4 bg-white shadow-md sm:rounded-lg text-left">
+        <div class="h-2 bg-darkGrayishBlue rounded-t-md"></div>
+        <div class="py-6 px-8">
+          <label class="block font-semibold">Restaurant Name:<label>
+          <input type="text" value="{{restaurant.restaurant_name}}" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md" name="restaurant-name" />
+          <label class="block mt-3 font-semibold">Restaurant URL:<label>
+          <input type="text" value="{{restaurant.restaurant_url}}" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md" name="restaurant-url" />
+          <label class="block mt-3 font-semibold">Restaurant Description:<label>
+          <textarea class="px-3 py-5 mt-2 h-28 w-full appearance-none block bg-gray-50 text-gray-600 border" name="restaurant-description">{{restaurant.restaurant_description}}</textarea>
+          {{!-- new modified dropdown categories --}}
+          {{!-- dropdown list Categories --}}
+          <div class=" flex align-middle items-center justify-center gap-2 bg-gray-100 p-2 w-96 mr-0 justify-items-end">
+            <p class="shadow-md  w-50 bg-gray-50 pl-2 pr-2 pt-2 pb-2">Choose:</p>
+            <div class="dropdown inline-block relative">
+              <button class="bg-white-300 border shadow-md text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center justify-start" id="btnCategories">
+                <span class="dropdownwidth mr-1">Categories</span>
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+              </button>
+              <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-36" id="itemCategoris">
+                  {{#each categories as |category|}}
+                    <li class="rounded-t bg-gray-200 py-2 px-4 block whitespace-no-wrap hover:bg-red-50 border-b"> {{category.category_name}}</li>
+                  {{/each}}
+              </ul>
+            </div>
+          </div>
+          
+          <!--
+          <div class=" flex items-end justify-start gap-4 mt-3">
+            <p>Categories:</p>
+            <button type="click" class="relative flex items-center focus:outline-none shadow text-gray-600 border rounded focus:ring ring-gray-200 group" id="btn-categories">
+                <p class="px-4">Choose...</p>
+                <span class="border-l hover:bg-white-100">
+                    <svg class="w-5 h-5 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+                <div class="absolute hidden group-focus:block top-full min-w-full w-max bg-white shadow-md mt-1 rounded">
+                    <ul class="text-left border rounded" id="category">
+                      {{#each categories as |category|}}
+                          <a href="/"><li class="px-4 py-1 hover:bg-red-50 border-b"> {{category.category_name}}</li></a>
+                      {{/each}}
+                    </ul>
+                </div>
+            </button>
+          </div>
+          -->
+          <div class="flex justify-end items-baseline ">
+              <button class="w-32 mt-5 mr-3 ml-3 px-5 py-2 text-sm shadow-md tracking-wider text-white rounded-full bg-green-300 hover:bg-green-400 hover:shadow-lg focus:outline-none" type="click" id="btn-edit">Edit</button>
+              <button class="w-32 mt-5 mr-3 ml-3 px-5 py-2 text-sm shadow-md tracking-wider text-white rounded-full bg-red-300 hover:bg-red-400 hover:shadow-lg focus:outline-none" type="click" id="btn-delete">Delete</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="/javascript/edit-restaurant.js"></script>
+</div>

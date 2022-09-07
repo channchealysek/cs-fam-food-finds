@@ -1,0 +1,22 @@
+<div class="border shadow-sm m-10 bg-white">
+  <div class="text-2xl p-3 mt-0 bg-red-100">Reviews</div>
+  {{#each this}}
+    <section class="" name="review-{{id}}">
+      <div class="flex flex-col md:flex-row md:gap-4 text-right mt-2 ml-5">
+        <div><a
+            href="/dashboard/review/edit/{{id}}"
+            class="text-xl font-bold text-cyan-800 underline"
+          >{{user.username}}</a><span> on {{format_date createdAt}}</span></div>
+      </div>
+      <div class="flex flex-col md:flex-row md:gap-4 text-right ml-5 mb-5">
+        {{review_text}}
+      </div>
+      <div
+        class="flex flex-col md:flex-row md:gap-4 ml-5 mb-5 mt-0 border shadow-sm rounded-full w-20 p-2 text-center font-semibold"
+      >
+        Rated:
+        {{rating}}
+      </div>
+    </section>
+  {{/each}}
+</div>

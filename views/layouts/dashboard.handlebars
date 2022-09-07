@@ -1,0 +1,83 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Fam Food Finds</title>
+  </head>
+  <body class="flex flex-col h-screen">
+    <header>
+      {{! Navbar }}
+      <nav class="relative w-full p-6 shadow-xl">
+        {{! Flex container }}
+        <div class="flex items-center justify-between">
+          {{! Logo }}
+          <div class="pt-2 w-48">
+            <img src="/images/logo.png" alt="" />
+          </div>
+          {{! menu Items }}
+          <div class="hidden md:flex space-x-6">
+            <a href="/" class="hover:text-darkGrayishBlue">Home</a>
+            <a
+              href="/dashboard"
+              class="hover:text-darkGrayishBlue"
+            >Dashboard</a>
+            <a
+              href="/"
+              class="hover:text-darkGrayishBlue"
+              id="logout">Logout</a>
+            </div>
+
+          {{! Humberger Icon }}
+          <button
+            id="menu-btn"
+            class="block hamburger md:hidden focus:outline-none"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+
+        </div>
+        {{! mobile menu }}
+        <div class="md:hidden">
+          <div
+            id="menu"
+            class="absolute flex-col z-10 items-center self-end hidden py-8 mt-7 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+          >
+            <a href="/" class="hover:text-darkGrayishBlue">Home</a>
+            <a
+              href="/dashboard"
+              class="hover:text-darkGrayishBlue"
+            >Dashboard</a>
+            <a
+              href="/"
+              class="hover:text-darkGrayishBlue"
+              id="logout"
+            >Logout</a>
+          </div>
+        </div>
+      </nav>
+      {{! end Navvar }}
+    </header>
+    {{! Hero Section }}
+    <div class="flex items-center justify-center p-10">
+      <h1 class="dashboard-card"><a href="/dashboard">Your Dashboard</a></h1>
+    </div>
+    <main class="flex-grow">
+      {{{body}}}
+    </main>
+    <footer class="flex items-center justify-center p-5 sticky bottom-0">
+      <div class="w-50 bg-darkGrayishBlue p-5 font-bold text-cyan-50">
+        <a href="/dashboard/restaurant/new">➕ New Restaurant</a>
+      </div>
+    </footer>
+    <script src="/javascript/logout.js"></script>
+  </body>
+</html>
