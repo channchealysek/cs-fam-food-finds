@@ -1,41 +1,45 @@
-# fam-food-finds
+# 🍽️ My Food Finds
 
-## Description
+Tired of scrolling through endless reviews to decide where to eat?  
+Frustrated after choosing a restaurant based on ratings, only to be disappointed?  
 
-Tired of sifting through thousands of reviews to find somewhere good to eat?
-Picked a restaurant based on reviews and been horribly disappointed?
-Enter My Food Finds, a small app for just family and friends to share restaurant recommendations from people you know to people you know.
+**My Food Finds** is a simple, personal app designed for **family and friends** to share trusted restaurant recommendations. Instead of relying on strangers’ opinions, you get suggestions directly from the people you know and trust.  
 
+---
 
-## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [Built With](#built-with)
-* [Collaborators](#collaborators)
+## ✨ Features
+- Share restaurant recommendations with family and friends
+- Browse trusted suggestions from people you know
+- Avoid unreliable online reviews
+- Keep dining experiences personal and fun
 
-## Installation
-~~~
-npm i
-~~~
-## Usage
+---
 
-Open the app on heroku here: https://fam-food-finds.herokuapp.com/ 
-  
-![](./utils/images/homepage.png)
-![](./utils/images/Restaurant-Review.png)
-![](./utils/images/add-a-restaurant.png)
+## 🛠️ Tech Stack
+- **Frontend:** React (or insert your framework if different)  
+- **Backend:** Node.js / Express (adjust if different)  
+- **Database:** MongoDB (or your choice of DB)  
+- **State Management:** Redux (if applicable)  
 
+---
 
-## Built With
-* Node.js
-* Express.js, express-sessions
-* Handlebars
-* Sequelize
-* MySQL2 
-* Bcrypt and dotenv
-* TailwindCSS
+## 🚀 Getting Started
 
-## Collaborators
-* [Douglas Red](https://github.com/DouglasRed)
-* [Channchealy Sek](https://github.com/channchealysek)
-* [Madalyne Cross](https://github.com/violanerd)
+### Prerequisites
+Make sure you have installed:
+- [Node.js](https://nodejs.org/) (v16+ recommended)
+- [MongoDB](https://www.mongodb.com/) (if using locally)
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/your-username/my-food-finds.git
+
+# Navigate into the project folder
+cd my-food-finds
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
